@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../../assets/logo/logo.png";
 import { Link } from "react-router-dom";
 import "./menubar.css";
 
@@ -61,6 +60,7 @@ const MenuBar = () => {
             </div>
           </div>
         </Link>
+        
       </div>
 
       <div className="dropdown lg:hidden">
