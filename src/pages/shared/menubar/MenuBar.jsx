@@ -20,8 +20,8 @@ const MenuBar = () => {
     <>
       <Link to="/">Home</Link>
       <Link to="/">About</Link>
-      <Link to="/">All toys</Link>
-      {user && <Link to="/">My toys</Link>}
+      <Link to="/allToys">All toys</Link>
+      {user && <Link to="/myToys">My toys</Link>}
       {user && <Link to="/addToy">Add toy</Link>}
       <Link to="/">Blogs</Link>
       <Link to="/">Contact</Link>
