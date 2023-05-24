@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-base-200">
-      <footer className="footer pt-10 pb-5  text-base-content">
-      <div>
+      <footer className="footer pt-10 pb-5 px-20  text-base-content">
+      <div className="space-y-5">
        <div className="text-center">
        <Link to="/">
         <img style={{width:"50px",display:"inline"}} src={Logo} alt="" />
@@ -32,7 +32,7 @@ const Footer = () => {
         <a className="link link-hover">Blogs</a>
         <a className="link link-hover">Contact</a>
       </div>
-      <div className="contact-info">
+      <div className="contact-info space-y-1">
       <span className="footer-title">Contact us</span>
           <p>123 Silicon Oasis, Dubai, UAE</p>
           <p> <a href="mailto:info@example.com">info@funedutoys.com</a></p>
@@ -49,7 +49,7 @@ const Footer = () => {
           <p>Subscribe to our newsletter:</p>
          <div className="flex mt-3">
          <input type="text" placeholder="Type here" className="input w-full max-w-xs mr-3" />
-          <button className="btn btn-primary">Subscribe</button>
+         <button className="btn bg-orange-600">Subscribe</button>
          </div>
         </div>
      </div>

@@ -1,27 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
-
 const Login = () => {
-
-    const {signIn}= useContext(AuthContext);
-
+  const { signIn } = useContext(AuthContext);
+  
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleLogin = (event) => {
     event.preventDefault();
-    const form = event.target;
-    const email = form.email.value;
-    const password = form.password.value;
-    signIn(email, password)
-    .then(result=>{
-        const user = result.user;
-        console.log(user);
-    })
-    .catch(error=>{
-        console.log(error.message);
-    })
-    
+    if ((email, password)) {
+      signIn(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+          navigate("/")
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    }
   };
   return (
     <div>
@@ -35,15 +35,17 @@ const Login = () => {
           </div>
           <div className="card flex-shrink-0 max-w-lg shadow-2xl w-1/2">
             <div className="card-body">
+              <h3 className="text-center text-4xl font-bold">Please Login</h3>
               <form onSubmit={handleLogin}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
+                    required
                     type="text"
                     placeholder="email"
-                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     className="input input-bordered"
                   />
                 </div>
@@ -54,12 +56,17 @@ const Login = () => {
                   <input
                     type="text"
                     placeholder="password"
-                    name="password"
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
                     className="input input-bordered"
                   />
                 </div>
                 <div className="form-control mt-6">
-                  <input type="submit" value="Login" className="btn btn-primary"/>
+                  <input
+                    type="submit"
+                    value="Login"
+                    className="btn btn-primary"
+                  />
                 </div>
               </form>
               <div className="flex justify-center mt-2 pb-3 ">

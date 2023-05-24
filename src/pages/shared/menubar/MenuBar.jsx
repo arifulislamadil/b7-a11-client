@@ -1,36 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./menubar.css";
+import { AuthContext } from "../../../authProvider/AuthProvider";
 
 const MenuBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   const menuItems = (
     <>
       <Link to="/">Home</Link>
       <Link to="/">About</Link>
-
       <Link to="/">All toys</Link>
-
-      <Link to="/">My toys</Link>
-
-      <Link to="/">Add toys</Link>
-
+      {user && <Link to="/">My toys</Link>}
+      {user && <Link to="/addToy">Add toy</Link>}
       <Link to="/">Blogs</Link>
       <Link to="/">Contact</Link>
-
-      {/* {user?.email ? (
-            <>
-              <li>
-                <Link to="/bookings">My Bookings</Link>
-              </li>
-              <li>
-                <button onClick={handleLogOut}>Log Out</button>
-              </li>
-            </>
-          ) : (
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          )} */}
     </>
   );
   return (
@@ -53,14 +47,30 @@ const MenuBar = () => {
       </div>
 
       <div className="navbar-end">
-        <Link to="/">
-          <div className="avatar ">
-            <div className="w-12 rounded-full">
-              <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" />
-            </div>
-          </div>
-        </Link>
-        
+        {/* show login and logout buttons */}
+        {user?.email ? (
+          <>
+            <Link className="mr-3" to="/">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={`${user?.email}`}
+              >
+                <div className="avatar ">
+                  <div className="w-12 rounded-full">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+            <button onClick={handleLogOut} className="btn bg-orange-600 mr-3">
+              Log Out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn  bg-orange-600">Login</button>
+          </Link>
+        )}
       </div>
 
       <div className="dropdown lg:hidden">

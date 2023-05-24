@@ -1,30 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
 
-    const {createUser}=useContext(AuthContext);
-    
-    const handleRegistration = (event) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [error, setError] = useState("");
+
+  const handleRegistration = (event) => {
     event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const photo= form.img.value;
-    const password = form.password.value;
-    
-    createUser(email,password)
-    .then(result=>{
-        const createdUser = result.user;
-        console.log(createdUser)
-    
-    })
-    .catch(error=>{
-        console.log(error.message)
-    })
 
-   
+    if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+     return setError("Minimum eight characters, at least one letter and one number");
+    }else{
+      setError(null)
+    }
+    if ((name, email, password,photo)) {
+      createUser(email, password)
+        .then((result) => {
+          const createdUser = result.user;
+          console.log(createdUser);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    }
   };
   return (
     <div>
@@ -38,15 +42,19 @@ const Register = () => {
           </div>
           <div className="card flex-shrink-0 max-w-lg shadow-2xl w-1/2">
             <div className="card-body">
+              <h3 className="text-center text-4xl font-bold">
+                Please Register
+              </h3>
               <form onSubmit={handleRegistration}>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
                   </label>
                   <input
+                  required
                     type="text"
                     placeholder="Name"
-                    name="name"
+                    onChange={(e) => setName(e.target.value)}
                     className="input input-bordered"
                   />
                 </div>
@@ -56,8 +64,9 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
+                    required
                     placeholder="email"
-                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     className="input input-bordered"
                   />
                 </div>
@@ -65,9 +74,13 @@ const Register = () => {
                   <label className="label">
                     <span className="label-text">Image</span>
                   </label>
-                  <input type="text" name="img" className="file-input file-input-bordered file-input-warning w-full" />
+                  <input
+                    type="text"
+                    required
+                    onChange={(e) => setPhoto(e.target.value)}
+                    className="file-input file-input-bordered file-input-warning w-full"
+                  />
                 </div>
-
 
                 <div className="form-control">
                   <label className="label">
@@ -76,15 +89,21 @@ const Register = () => {
                   <input
                     type="text"
                     placeholder="password"
-                    name="password"
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
                     className="input input-bordered"
                   />
+                  <span>{error}</span>
                 </div>
                 <div className="form-control mt-6">
-                <input type="submit" value="Register" className="btn btn-primary"/>
+                  <input
+                    type="submit"
+                    value="Register"
+                    className="btn btn-primary"
+                  />
                 </div>
               </form>
-              
+
               <div className="text-center">
                 <span>Have account then </span>
                 <Link className="" to="/login">
