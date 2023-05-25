@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 
-const Toy = ({ toy }) => {
+const MyToy = ({ toy }) => {
   return (
     <tbody className="">
       {/* row 1 */}
       <tr>
         <td>
           <div className="flex items-center space-x-3">
+            <th>
+              <label>
+            
+              </label>
+            </th>
             <div className="avatar">
               <div className="mask mask-squircle w-12 h-12">
                 <img src={toy.pictureUrl} alt="Avatar Tailwind CSS Component" />
@@ -23,13 +28,11 @@ const Toy = ({ toy }) => {
         <td>$ {toy.price}</td>
         <td>{toy.quantity}</td>
         <th>
-          <Link to={`/toyDetails`}>
-            <button className="btn bg-orange-600 mt-3">view more</button>
-          </Link>
+          <button className="btn bg-orange-600 mt-3">view more</button>
         </th>
       </tr>
     </tbody>
   );
 };
 
-export default Toy;
+export default MyToy;

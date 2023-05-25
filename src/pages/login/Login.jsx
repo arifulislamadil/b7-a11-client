@@ -1,14 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
-  
-  const navigate = useNavigate();
+  const { signIn,user} = useContext(AuthContext);
+  const navigator = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [getAuthToken, setAuthToken] = useState();
+  console.log(getAuthToken);
+  const location = useLocation();
+  useEffect(()=>{
+    setAuthToken(location?.state?.from?.pathname || "/")
+  },[])
+
   const handleLogin = (event) => {
     event.preventDefault();
     if ((email, password)) {
@@ -16,7 +23,12 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
-          navigate("/")
+          if(getAuthToken){
+            navigator(`${getAuthToken}`);
+          }else{
+            navigator("/")
+          }
+          
         })
         .catch((error) => {
           console.log(error.message);

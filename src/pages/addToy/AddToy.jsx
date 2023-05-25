@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../authProvider/AuthProvider";
 
 const AddToys = () => {
+  const {user}=useContext(AuthContext)
   const [pictureUrl, setPictureUrl] = useState("");
   const [name, setName] = useState("");
   const [sellerName, setSellerName] = useState("");
   const [toyName, setToyName] = useState("");
-  const [sellerEmail, setSellerEmail] = useState("");
+  const [sellerEmail, setSellerEmail] = useState(user?.email);
   const [subCategory, setSubCategory] = useState("");
   const [price, setPrice] = useState("");
   const [rating, setRating] = useState("");
@@ -32,7 +34,7 @@ const AddToys = () => {
     setPictureUrl("");
     setName("");
     setSellerName("");
-    setSellerEmail("");
+    // setSellerEmail("");
     setSubCategory("");
     setPrice("");
     setRating("");
@@ -102,7 +104,7 @@ const AddToys = () => {
                 type="email"
                 className="input input-bordered"
                 placeholder="seller email"
-                value={sellerEmail}
+                value = {sellerEmail}
                 onChange={(event) => setSellerEmail(event.target.value)}
               />
             </div>

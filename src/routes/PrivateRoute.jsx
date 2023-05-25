@@ -3,12 +3,17 @@ import { AuthContext } from '../authProvider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({children}) => {
-const {user}= useContext(AuthContext)
+const {user,loading}= useContext(AuthContext)
+console.log("user in the private route",user)
  const location = useLocation();
-if(user){
+ if(loading){
+    return <progress className="progress w-56"></progress>
+ }
+ if(user?.email){
     return children
 }
-    return <Navigate state={{from:location}} to="/login" replace></Navigate>
+ 
+return <Navigate state={{from: location}} to="/login" replace></Navigate>
 
 };
 
