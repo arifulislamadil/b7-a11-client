@@ -10,7 +10,7 @@ const MyToy = ({ toy }) => {
           <div className="flex items-center space-x-3">
             <th>
               <label>
-            
+                <h3><FaBeer/></h3>
               </label>
             </th>
             <div className="avatar">
@@ -28,7 +28,7 @@ const MyToy = ({ toy }) => {
         <td>$ {toy.price}</td>
         <td>{toy.quantity}</td>
         <th>
-          <button className="btn bg-orange-600 mt-3">view more</button>
+          <button className="btn bg-orange-600 mt-3">Update</button>
         </th>
       </tr>
     </tbody>

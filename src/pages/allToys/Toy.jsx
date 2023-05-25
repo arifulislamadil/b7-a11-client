@@ -23,7 +23,7 @@ const Toy = ({ toy }) => {
         <td>$ {toy.price}</td>
         <td>{toy.quantity}</td>
         <th>
-          <Link to={`/toyDetails`}>
+          <Link to={`/toyDetails/${toy._id}`}>
             <button className="btn bg-orange-600 mt-3">view more</button>
           </Link>
         </th>
