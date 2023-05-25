@@ -4,6 +4,7 @@ const AddToys = () => {
   const [pictureUrl, setPictureUrl] = useState("");
   const [name, setName] = useState("");
   const [sellerName, setSellerName] = useState("");
+  const [toyName, setToyName] = useState("");
   const [sellerEmail, setSellerEmail] = useState("");
   const [subCategory, setSubCategory] = useState("");
   const [price, setPrice] = useState("");
@@ -11,20 +12,9 @@ const AddToys = () => {
   const [quantity, setQuantity] = useState("");
   const [description, setDescription] = useState("");
 
-
-
-
-
-
-
-
-
-
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
-  const newToy = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description};
+  const newToy = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description,toyName};
 
   // add a toy to the database
   fetch("http://localhost:5000/addToy",{
@@ -89,6 +79,18 @@ const AddToys = () => {
                 placeholder="seller name"
                 className="input input-bordered"
                 onChange={(event) => setSellerName(event.target.value)}
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Toy Name:</span>
+              </label>
+              <input
+                type="text"
+                value={toyName}
+                placeholder="seller name"
+                className="input input-bordered"
+                onChange={(event) => setToyName(event.target.value)}
               />
             </div>
             <div className="form-control">

@@ -3,64 +3,40 @@ import React from "react";
 const Toy = ({toy}) => {
    
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        {/* head */}
-        <thead>
-          <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+        <tbody className="">
           {/* row 1 */}
           <tr>
-            <th>
-              <label>
-                <input type="checkbox" className="checkbox" />
-              </label>
-            </th>
             <td>
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
                     <img
-                      src="/tailwind-css-component-profile-2@56w.png"
+                      src={toy.pictureUrl}
                       alt="Avatar Tailwind CSS Component"
                     />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Hart Hagerty</div>
-                  <div className="text-sm opacity-50">United States</div>
+                  <div className="font-bold">{toy.toyName}</div>
+            
                 </div>
               </div>
             </td>
             <td>
-              Zemlak, Daniel and Leannon
-              <br />
-              <span className="badge badge-ghost badge-sm">
-                Desktop Support Technician
-              </span>
+              {toy.sellerName}
+              
             </td>
-            <td>Purple</td>
+            <td>
+              {toy.subCategory}
+              
+            </td>
+            <td>$ {toy.price}</td>
+            <td>{toy.quantity}</td>
             <th>
-              <button className="btn btn-ghost btn-xs">details</button>
+            <button className="btn bg-orange-600 mt-3">view more</button>
             </th>
           </tr>
-          
-          
         </tbody>
-      
-      </table>
-    </div>
   );
 };
 
