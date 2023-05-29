@@ -55,9 +55,6 @@ const ToyDetails = () => {
                     <td className="font-bold">Available Quantity</td>
                     <td>{quantity}</td>
                   </tr>
-                 
-                  
-                 
                 </tbody>
                 
               </table>

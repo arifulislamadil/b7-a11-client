@@ -55,11 +55,6 @@ const UpdateToy = () => {
   };
 
 
-
-
-
-
-
   return (
     <div className="card flex-shrink-0 w-5/6 md:w-1/2 mx-auto border my-10">
       <div className="card-body">

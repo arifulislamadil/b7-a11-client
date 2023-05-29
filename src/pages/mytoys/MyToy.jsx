@@ -3,7 +3,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyToy = ({ toy }) => {
+const MyToy = ({ toy,toys,setToys }) => {
   const {
     _id,
     name,
@@ -40,6 +40,8 @@ const MyToy = ({ toy }) => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              const remaining = toys.filter(ty=> ty._id!==_id)
+              setToys(remaining)
             }
           });
       }

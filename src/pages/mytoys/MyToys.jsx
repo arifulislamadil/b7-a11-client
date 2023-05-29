@@ -32,7 +32,7 @@ const MyToys = () => {
           </tr>
         </thead>
         {toys.map((toy) => (
-          <MyToy toy={toy}></MyToy>
+          <MyToy toys={toys} setToys ={setToys} toy={toy}></MyToy>
         ))}
       </table>
     </div>
