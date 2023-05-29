@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToy = ({ toy }) => {
@@ -31,18 +32,14 @@ const MyToy = ({ toy }) => {
         //   'Your file has been deleted.',
         //   'success'
         // )
-        fetch(`http://localhost:5000/addToy/${id}`,{
-          method:"DELETE"
+        fetch(`http://localhost:5000/addToy/${id}`, {
+          method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
           });
       }
@@ -77,7 +74,9 @@ const MyToy = ({ toy }) => {
         <td>$ {price}</td>
         <td>{quantity}</td>
         <th>
-          <button className="btn bg-orange-600 mt-3">Update</button>
+          <Link to={`/updateToy/${_id}`}>
+            <button className="btn bg-orange-600 mt-3">Update</button>
+          </Link>
         </th>
       </tr>
     </tbody>
