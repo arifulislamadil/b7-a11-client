@@ -24,7 +24,7 @@ const MenuBar = () => {
       <Link to="/allToys">All toys</Link>
       {user && <Link to="/myToys">My toys</Link>}
       {user && <Link to="/addToy">Add toy</Link>}
-      <Link to="/">Blogs</Link>
+      <Link to="/blog">Blogs</Link>
       <Link to="/">Contact</Link>
     </>
   );
