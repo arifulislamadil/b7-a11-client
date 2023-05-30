@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import "./menubar.css";
 import { AuthContext } from "../../../authProvider/AuthProvider";
 
+
+
 const MenuBar = () => {
+ 
   const { user, logOut } = useContext(AuthContext);
 
 
@@ -20,12 +23,12 @@ const MenuBar = () => {
   const menuItems = (
     <>
       <Link to="/">Home</Link>
-      <Link to="/">About</Link>
+      <Link to="/about">About</Link>
       <Link to="/allToys">All toys</Link>
       {user && <Link to="/myToys">My toys</Link>}
       {user && <Link to="/addToy">Add toy</Link>}
       <Link to="/blog">Blogs</Link>
-      <Link to="/">Contact</Link>
+      <Link to="/contact">Contact</Link>
     </>
   );
   return (

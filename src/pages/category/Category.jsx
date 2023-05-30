@@ -18,10 +18,10 @@ const Category = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="my-20">
       <div className="text-center my-5">
-        <h3 className="text-4xl font-bold my-5">Shop by Category</h3>
-        <div className="">
+        <h3 className="text-4xl font-bold my-10">Shop by Category</h3>
+        <div className="my-10">
           <button
             className="btn bg-orange-600 mr-3"
             onClick={() => handleMath("math")}

@@ -3,7 +3,7 @@ import "./about.css";
 
 const About = () => {
   return (
-    <div>
+    <div className="my-20"> 
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
           <img

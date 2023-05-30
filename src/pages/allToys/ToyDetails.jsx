@@ -32,7 +32,7 @@ const ToyDetails = () => {
                 <tbody>
                   <tr>
                     <td className="font-bold">Price </td>
-                    <td className="text-xl font-bold">{price}</td>
+                    <td className="text-xl font-bold">$ {price}</td>
                   </tr>
                   <tr>
                     <td className="font-bold">Name </td>
@@ -47,7 +47,7 @@ const ToyDetails = () => {
                     <td>{sellerEmail}</td>
                   </tr>
                   <tr>
-                    <td className="font-bold">Sub-category</td>
+                    <td className="font-bold">category</td>
                     <td>{subCategory}</td>
                   </tr>
                   <tr>

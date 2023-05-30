@@ -44,7 +44,7 @@ const AddToys = () => {
   return (
     <div className="card flex-shrink-0 w-5/6 md:w-1/2 mx-auto border my-10">
       <div className="card-body">
-        <h1 className="text-center text-4xl font-serif font-semibold">Add a toy</h1>
+        <h1 className="text-center text-4xl font-serif font-semibold text-orange-600">Add a toy</h1>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="form-control">
@@ -110,7 +110,7 @@ const AddToys = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Sub-category:</span>
+                <span className="label-text">Category:</span>
               </label>
               <input
                 type="text"
