@@ -5,11 +5,15 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import app from "../firebase/Firebase.config";
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app);
+
+
+const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
 const [user,setUser] = useState(null)
@@ -32,6 +36,8 @@ const [loading,setLoading] = useState(true)
     setLoading(true)
     return signOut(auth)
   }
+
+ 
  
   // monitor the user state
 useEffect(()=>{
@@ -49,7 +55,7 @@ useEffect(()=>{
     createUser,
     signIn,
     logOut,
-    loading
+    loading,
   };
 
   return (

@@ -5,7 +5,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   // show 20 toys at the first time and then show more then 20 toys.
-  const [visibleItems, setVisibleItems] = useState(5);
+  const [visibleItems, setVisibleItems] = useState(20);
   const [showAll, setShowAll] = useState(false);
 
   const handleShowMore = ({toys}) => {

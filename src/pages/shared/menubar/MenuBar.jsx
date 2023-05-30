@@ -6,6 +6,7 @@ import { AuthContext } from "../../../authProvider/AuthProvider";
 const MenuBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
+
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -53,11 +54,11 @@ const MenuBar = () => {
             <Link className="mr-3" to="/">
               <div
                 className="tooltip tooltip-bottom"
-                data-tip={`${user?.email}`}
+                data-tip={`${user?.displayName                }`}
               >
                 <div className="avatar ">
                   <div className="w-12 rounded-full">
-                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" />
+                    <img src={user.photoURL? user.photoURL:"no img"} />
                   </div>
                 </div>
               </div>

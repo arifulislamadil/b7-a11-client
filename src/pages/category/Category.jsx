@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
   const [toys, setToys] = useState([]);
-  console.log(toys);
 
   useEffect(() => {
     // Fetch the data for the initial category

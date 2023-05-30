@@ -2,19 +2,25 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/Firebase.config";
+
+const auth = getAuth(app);
+const  provider = new GoogleAuthProvider();
+
+
 
 const Login = () => {
-  const { signIn,user} = useContext(AuthContext);
+  const { signIn, user, handleGoogleLogin } = useContext(AuthContext);
   const navigator = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [getAuthToken, setAuthToken] = useState();
-  console.log(getAuthToken);
   const location = useLocation();
-  useEffect(()=>{
-    setAuthToken(location?.state?.from?.pathname || "/")
-  },[])
+  useEffect(() => {
+    setAuthToken(location?.state?.from?.pathname || "/");
+  }, []);
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -23,17 +29,36 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           console.log(user);
-          if(getAuthToken){
+          if (getAuthToken) {
             navigator(`${getAuthToken}`);
-          }else{
-            navigator("/")
+          } else {
+            navigator("/");
           }
-          
         })
         .catch((error) => {
           console.log(error.message);
         });
     }
+  };
+
+
+   // google login
+  
+  const handleGoogle = (event) => {
+    event.preventDefault();
+    signInWithPopup(auth,provider)
+    .then((result) => {
+      const user = result.user;
+      console.log(user);
+      if (getAuthToken) {
+        navigator(`${getAuthToken}`);
+      } else {
+        navigator("/");
+      }
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
   };
   return (
     <div>
@@ -77,13 +102,13 @@ const Login = () => {
                   <input
                     type="submit"
                     value="Login"
-                    className="btn btn-primary"
+                    className="btn bg-orange-600"
                   />
                 </div>
               </form>
               <div className="flex justify-center mt-2 pb-3 ">
                 <h3 className="text-2xl mr-5">
-                  <button>
+                  <button className=" text-orange-600" onClick={handleGoogle}>
                     <FaGoogle />
                   </button>
                 </h3>

@@ -1,15 +1,18 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { user,createUser } = useContext(AuthContext);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [photo, setPhoto] = useState("");
   const [error, setError] = useState("");
+
+
+const navigator = useNavigate()
 
   const handleRegistration = (event) => {
     event.preventDefault();
@@ -24,12 +27,17 @@ const Register = () => {
         .then((result) => {
           const createdUser = result.user;
           console.log(createdUser);
+          if(result.user){
+            navigator('/')
+          }
         })
         .catch((error) => {
           console.log(error.message);
         });
     }
   };
+
+  
   return (
     <div>
       <div className="hero min-h-screen">
@@ -99,7 +107,7 @@ const Register = () => {
                   <input
                     type="submit"
                     value="Register"
-                    className="btn btn-primary"
+                    className="btn bg-orange-600"
                   />
                 </div>
               </form>
