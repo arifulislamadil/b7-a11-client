@@ -1,4 +1,4 @@
-# FunEduToys - Readme
+# FunEduToys
 
 ## Description
 FunEduToys is an online shop for educational children's toys. It provides a platform for users to browse and purchase various educational toys. Additionally, users can post their own toys for sale, and they have the option to register and login to enhance their shopping experience.
@@ -19,7 +19,7 @@ The FunEduToys website offers the following key features and functionality:
    - Users can create a new account by registering with their email and password.
    - Existing users can securely log in to their accounts using their credentials.
 
-2. Toy Catalog:
+2. User can see toys features:
    - Users can browse through a wide range of educational toys available for purchase.
    - Each toy is accompanied by detailed information, including descriptions, images, and prices.
 
@@ -35,22 +35,7 @@ The FunEduToys website offers the following key features and functionality:
    - The website is designed to be responsive, ensuring optimal user experience across different devices and screen sizes.
    - Tailwind CSS and DaisyUI are utilized to create a visually appealing and mobile-friendly interface.
 
-## Installation and Setup
-To run the FunEduToys website locally, follow these steps:
 
-1. Clone the repository from GitHub: `git clone https://github.com/your-username/funedutoys.git`
-2. Install the dependencies using a package manager like npm or yarn: `npm install` or `yarn install`
-3. Configure Firebase authentication by creating a new project and obtaining the necessary API keys.
-4. Replace the placeholder API keys in the project code with your Firebase API keys.
-5. Start the development server: `npm start` or `yarn start`
-6. Open your web browser and navigate to `http://localhost:3000` to access the FunEduToys website.
 
-Note: Remember to set up a Firebase project and configure the necessary security rules to ensure secure authentication and database operations.
-
-## Contributions and License
-Contributions to the FunEduToys project are welcome. If you encounter any bugs, have suggestions for improvements, or would like to add new features, please submit an issue or a pull request on the GitHub repository.
-
-The project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to modify and distribute the code as per the terms of the license.
-
-## Conclusion
-The FunEduToys website provides an engaging online shopping experience for educational children's toys. With features such as user registration
+## Live Website Link
+To learn more about my project, please visit the [live website](http://www.example.com).
