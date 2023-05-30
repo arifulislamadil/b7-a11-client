@@ -1,8 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-const ToyDetails = () => {
-    const toy= useLoaderData();
+const ViewDetailCategory = () => {
+    const toy=useLoaderData();
+    console.log(toy);
+
     const {
         pictureUrl,
         name,
@@ -70,4 +72,4 @@ const ToyDetails = () => {
     );
 };
 
-export default ToyDetails;
+export default ViewDetailCategory;
