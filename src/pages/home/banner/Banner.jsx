@@ -5,7 +5,7 @@ const Banner = () => {
     <div>
       <div className="carousel w-full h-[600px]">
         <div id="slide1" className="carousel-item relative w-full ">
-          <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10 ">
+          <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10">
             <div className="w-full md:w-1/2 mt-10 md:mt-0 flex items-center">
               <div className="space-y-7">
                 <h2 className="text-4xl md:text-6xl font-bold">
@@ -37,10 +37,10 @@ const Banner = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-        <div className="absolute rounded-xl flex justify-between h-full bottom-0 pl-10 ">
-            <div className="space-y-10 w-1/2 flex items-center">
+        <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10">
+            <div className="w-full md:w-1/2 mt-10 md:mt-0 flex items-center">
               <div className="space-y-7">
-                <h2 className="text-xl md:text-6xl font-bold">
+                <h2 className="text-4xl md:text-6xl font-bold">
                 Unlock your child's potential with our educational toy selection
                 </h2>
                 <p className="mt-3">
@@ -59,7 +59,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 md:bottom-0 sm:bottom-[-200px] bottom-[-150px]">
             <a href="#slide1" className="btn btn-circle">
               ❮
             </a>
@@ -69,10 +69,10 @@ const Banner = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-        <div className="absolute rounded-xl flex justify-between h-full bottom-0 pl-10 ">
-            <div className="space-y-10 w-1/2 flex items-center">
+        <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10">
+            <div className="w-full md:w-1/2 mt-10 md:mt-0 flex items-center">
               <div className="space-y-7">
-                <h2 className="text-6xl font-bold">
+                <h2 className="text-4xl md:text-6xl font-bold">
                 Unlock your child's potential with our educational toy selection
                 </h2>
                 <p className="mt-3">
@@ -91,7 +91,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 md:bottom-0 sm:bottom-[-200px] bottom-[-150px]">
             <a href="#slide2" className="btn btn-circle">
               ❮
             </a>
@@ -101,10 +101,10 @@ const Banner = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-        <div className="absolute rounded-xl flex justify-between h-full bottom-0 pl-10 ">
-            <div className="space-y-10 w-1/2 flex items-center">
+        <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10">
+            <div className="w-full md:w-1/2 mt-10 md:mt-0 flex items-center">
               <div className="space-y-7">
-                <h2 className="text-6xl font-bold">
+                <h2 className="text-4xl md:text-6xl font-bold">
                 Unlock your child's potential with our educational toy selection
                 </h2>
                 <p className="mt-3">
@@ -123,7 +123,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+          <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 md:bottom-0 sm:bottom-[-200px] bottom-[-150px]">
             <a href="#slide3" className="btn btn-circle">
               ❮
             </a>

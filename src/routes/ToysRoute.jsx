@@ -12,15 +12,15 @@ import AllToys from "../pages/allToys/AllToys";
 import ToyDetails from "../pages/allToys/ToyDetails";
 import UpdateToy from "../pages/updateToy/UpdateToy";
 import ViewDetailCategory from "../pages/viewDetailCategory/viewDetailCategory";
-
 import About from "../pages/home/about/About";
 import Blog from "../pages/blog/Blog";
 import Contact from "../pages/contact/Contact";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Main/>,
     children: [
       {
         path: "/",
@@ -50,7 +50,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        
+        element: <About/>,
       },
       {
         path: "/myToys",

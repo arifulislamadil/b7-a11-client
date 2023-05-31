@@ -1,9 +1,13 @@
 import React from "react";
 import "./about.css";
+import { Helmet } from "react-helmet";
+import DynamicHeader from "../../../routes/DynamicHeader";
 
-const About = () => {
+const About = ({title}) => {
   return (
+   
     <div className="my-20"> 
+  <DynamicHeader title="About"></DynamicHeader>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
           <img
@@ -27,6 +31,7 @@ const About = () => {
         </div>
       </div>
     </div>
+  
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 const AddToys = () => {
   const {user}=useContext(AuthContext)
@@ -43,6 +44,7 @@ const AddToys = () => {
   };
   return (
     <div className="card flex-shrink-0 w-5/6 md:w-1/2 mx-auto border my-10">
+      <DynamicHeader title="Add toy"></DynamicHeader>
       <div className="card-body">
         <h1 className="text-center text-4xl font-serif font-semibold text-orange-600">Add a toy</h1>
         <form onSubmit={handleSubmit}>

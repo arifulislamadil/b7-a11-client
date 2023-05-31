@@ -1,9 +1,11 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 function Contact() {
   return (
     <div className="max-w-7xl mx-auto my-20 px-4 sm:px-6 lg:px-8">
+       <DynamicHeader title="Contact"></DynamicHeader>
       <div className="md:grid md:grid-cols-2 md:gap-6">
         <div className="md:col-span-1">
           <img

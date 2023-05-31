@@ -1,8 +1,10 @@
 import React from "react";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 const Blog = () => {
   return (
     <div className="mb-20 px-5 md:px-40">
+      <DynamicHeader title="Blog"></DynamicHeader>
       <h1 className="text-4xl text-center font-bold mt-10 text-orange-600" >Blog</h1>
       <div>
         <h1 className="text-center text-4xl text-green-600 font-bold mt-2">
