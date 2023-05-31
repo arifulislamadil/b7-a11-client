@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
+
 const Register = () => {
-  const { user,createUser } = useContext(AuthContext);
+  const { user, createUser ,profileUpdate} = useContext(AuthContext);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,24 +12,30 @@ const Register = () => {
   const [photo, setPhoto] = useState("");
   const [error, setError] = useState("");
 
-
-const navigator = useNavigate()
+  const navigator = useNavigate();
 
   const handleRegistration = (event) => {
     event.preventDefault();
 
+    // password verification
     if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-     return setError("Minimum eight characters, at least one letter and one number");
-    }else{
-      setError(null)
+      return setError(
+        "Minimum eight characters, at least one letter and one number"
+      );
+    } else {
+      setError(null);
     }
-    if ((name, email, password,photo)) {
+
+    if ((name, email, password, photo)) {
       createUser(email, password)
         .then((result) => {
           const createdUser = result.user;
           console.log(createdUser);
-          if(result.user){
-            navigator('/')
+
+          // update profile
+          profileUpdate(name,photo)
+          if (result.user) {
+            navigator("/");
           }
         })
         .catch((error) => {
@@ -37,7 +44,6 @@ const navigator = useNavigate()
     }
   };
 
-  
   return (
     <div>
       <div className="hero min-h-screen">
@@ -59,7 +65,7 @@ const navigator = useNavigate()
                     <span className="label-text">Name</span>
                   </label>
                   <input
-                  required
+                    required
                     type="text"
                     placeholder="Name"
                     onChange={(e) => setName(e.target.value)}

@@ -7,6 +7,7 @@ import {
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import app from "../firebase/Firebase.config";
 
@@ -37,6 +38,13 @@ const [loading,setLoading] = useState(true)
     return signOut(auth)
   }
 
+  // update profile information with name and imageurl 
+  const profileUpdate = (name,photo)=>{
+    updateProfile(auth.currentUser,{
+      displayName:name,
+      photoURL:photo
+    })
+  }
  
  
   // monitor the user state
@@ -56,6 +64,7 @@ useEffect(()=>{
     signIn,
     logOut,
     loading,
+    profileUpdate
   };
 
   return (
