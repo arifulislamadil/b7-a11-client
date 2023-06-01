@@ -20,8 +20,8 @@ const ToyDetails = () => {
         <div className="my-10">
            <DynamicHeader title="Details"></DynamicHeader>
         <div className="card lg:card-side bg-base-100 shadow-xl">
-          <figure className="flex mx-auto">
-            <img src={pictureUrl} alt="Album" className="w-full md:w-4/6" />
+          <figure className="flex mx-auto w-full md:w-2/6" >
+            <img src={pictureUrl} alt="Album"  />
           </figure>
           <div className="divider lg:divider-horizontal"></div>
           <div className="card-body">
