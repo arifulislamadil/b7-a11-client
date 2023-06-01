@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 const UpdateToy = () => {
   const toy = useLoaderData();
@@ -34,7 +35,7 @@ const UpdateToy = () => {
     const newToy = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description,toyName};
     console.log(newToy.name);
   // add a toy to the database
-  fetch(`http://localhost:5000/addToy/${_id}`,{
+  fetch(`https://funedutoys.vercel.app/addToy/${_id}`,{
   method: "PUT",
   headers: {
   'content-type': 'application/json'
@@ -46,7 +47,7 @@ const UpdateToy = () => {
     if(data.modifiedCount>0){
         Swal.fire({
             title:"Success!",
-            text:"Coffee Updated Successfully",
+            text:"Toy Updated Successfully",
             icon:"success",
             confirmButtonText:"cool"
         })
@@ -57,6 +58,7 @@ const UpdateToy = () => {
 
   return (
     <div className="card flex-shrink-0 w-5/6 md:w-1/2 mx-auto border my-10">
+       <DynamicHeader title="Update"></DynamicHeader>
       <div className="card-body">
         <h1 className="text-center text-4xl font-serif font-semibold">
           Update toy

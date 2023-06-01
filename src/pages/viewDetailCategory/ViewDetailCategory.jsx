@@ -1,9 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import DynamicHeader from '../../routes/DynamicHeader';
 
 const ViewDetailCategory = () => {
     const toy=useLoaderData();
-    console.log(toy);
+    console.log("toy details by category",toy);
 
     const {
         pictureUrl,
@@ -19,6 +20,7 @@ const ViewDetailCategory = () => {
       } = toy;
     return (
         <div className="my-10">
+           <DynamicHeader title="Details"></DynamicHeader>
         <div className="card lg:card-side bg-base-100 shadow-xl">
           <figure className="flex mx-auto">
             <img src={pictureUrl} alt="Album" className="w-full md:w-4/6" />
@@ -34,7 +36,7 @@ const ViewDetailCategory = () => {
                 <tbody>
                   <tr>
                     <td className="font-bold">Price </td>
-                    <td className="text-xl font-bold">{price}</td>
+                    <td className="text-xl font-bold">$ {price}</td>
                   </tr>
                   <tr>
                     <td className="font-bold">Name </td>

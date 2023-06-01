@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import DynamicHeader from "../../routes/DynamicHeader";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
   const {user}=useContext(AuthContext)
@@ -20,7 +21,7 @@ const AddToys = () => {
   const newToy = {pictureUrl,name,sellerName,sellerEmail,subCategory,price,rating,quantity,description,toyName};
 
   // add a toy to the database
-  fetch("http://localhost:5000/addToy",{
+  fetch("https://funedutoys.vercel.app/addToy",{
   method: "POST",
   headers: {
   'content-type': 'application/json'
@@ -28,7 +29,14 @@ const AddToys = () => {
   body: JSON.stringify(newToy)
 })
 .then(res=>res.json())
-.then(data => console.log(data))
+.then(data => {console.log(data);
+    Swal.fire({
+        title:"Success!",
+        text:"Toy Updated Successfully",
+        icon:"success",
+        confirmButtonText:"cool"
+    })
+})
 
 
     // Reset the form fields

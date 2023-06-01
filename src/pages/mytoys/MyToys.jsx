@@ -11,7 +11,7 @@ const MyToys = () => {
     <progress className="progress w-56"></progress>;
   }
 
-  const url = `http://localhost:5000/addToy?sellerEmail=${user?.email}`;
+  const url = `https://funedutoys.vercel.app/addToy?sellerEmail=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -33,9 +33,9 @@ const MyToys = () => {
     <div className="overflow-x-auto w-full mt-5 mb-20">
    <DynamicHeader title="My toys"></DynamicHeader>
       <div className="form-control flex justify-center items-center mb-3">
-        <div>
-        <button className="btn bg-orange-600 mr-2" onClick={handleSortAscending}>lowest to highest</button>
-      <button className="btn bg-orange-600" onClick={handleSortDescending}>Highest to lowest</button>
+        <div className="flex mx-auto">
+        <button className="btn bg-orange-600 mr-2" onClick={handleSortAscending}>low to high</button>
+      <button className="btn bg-orange-600" onClick={handleSortDescending}>High to low</button>
         </div>
       </div>
       <table className="table w-full">

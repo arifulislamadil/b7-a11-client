@@ -19,7 +19,7 @@ const AllToys = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/addToy")
+    fetch("https://funedutoys.vercel.app/addToy")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

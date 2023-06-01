@@ -47,14 +47,14 @@ const Register = () => {
   return (
     <div>
       <div className="hero min-h-screen">
-        <div className="hero-content">
-          <div className="text-center lg:text-left w-1/2">
+        <div className="hero-content flex flex-col md:flex-row">
+          <div className="text-center lg:text-left w-3/5 md:w-1/2">
             <img
               src="https://pathwayport.com/saasland/images/login@4x.png"
               alt=""
             />
           </div>
-          <div className="card flex-shrink-0 max-w-lg shadow-2xl w-1/2">
+          <div className="card flex-shrink-0 max-w-lg shadow-2xl w-full md:w-1/2">
             <div className="card-body">
               <h3 className="text-center text-4xl font-bold">
                 Please Register

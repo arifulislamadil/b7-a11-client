@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DynamicHeader from "../../../../routes/DynamicHeader";
 
 const Product = ({ product }) => {
   const { _id,picture, title, price, discount } = product;
   return (
     <div>
+      <DynamicHeader title="Home"></DynamicHeader>
       <div className="card border-solid border-2 border-orange-500">
         <div className="px-10 pt-10">
           <img src={picture} alt="Shoes" className="rounded-xl w-full" />

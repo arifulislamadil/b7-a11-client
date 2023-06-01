@@ -1,8 +1,10 @@
+import AOS from "aos";
 import React from "react";
 
 const Banner = () => {
+  AOS.init();
   return (
-    <div>
+    <div data-aos="fade-left" data-aos-delay="500" data-aos-duration="10000" data-aos-easing="ease-in-out">
       <div className="carousel w-full h-[600px]">
         <div id="slide1" className="carousel-item relative w-full ">
           <div className="absolute rounded-xl flex flex-col md:flex-row justify-between h-full bottom-0 pl-10">

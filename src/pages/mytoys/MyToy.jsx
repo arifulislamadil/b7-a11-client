@@ -32,7 +32,7 @@ const MyToy = ({ toy,toys,setToys }) => {
         //   'Your file has been deleted.',
         //   'success'
         // )
-        fetch(`http://localhost:5000/addToy/${id}`, {
+        fetch(`https://funedutoys.vercel.app/addToy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

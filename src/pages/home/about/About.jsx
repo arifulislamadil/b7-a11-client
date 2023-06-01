@@ -1,12 +1,13 @@
 import React from "react";
 import "./about.css";
-import { Helmet } from "react-helmet";
 import DynamicHeader from "../../../routes/DynamicHeader";
+import AOS from "aos";
 
-const About = ({title}) => {
+const About = () => {
+  AOS.init();
   return (
    
-    <div className="my-20"> 
+    <div data-aos="fade-right" data-aos-delay="500" data-aos-duration="10000" data-aos-easing="ease-in-out" className="my-20"> 
   <DynamicHeader title="About"></DynamicHeader>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">

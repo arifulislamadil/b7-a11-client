@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import DynamicHeader from "../../../../routes/DynamicHeader";
 
 const ProductDetails = () => {
   const details = useLoaderData();
@@ -14,6 +15,7 @@ const ProductDetails = () => {
   } = details;
   return (
     <div className="my-10">
+      <DynamicHeader title="Details"></DynamicHeader>
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure className="flex mx-auto">
           <img src={picture} alt="Album" className="w-full md:w-4/6" />

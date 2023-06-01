@@ -1,41 +1,45 @@
+import AOS from "aos";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import 'aos/dist/aos.css';
 
 const Category = () => {
   const [toys, setToys] = useState([]);
-
+  AOS.init();
   useEffect(() => {
     // Fetch the data for the initial category
-    fetch(`http://localhost:5000/toyQuery?subCategory=math`)
+    fetch(`https://funedutoys.vercel.app/toyQuery?subCategory=math`)
       .then((res) => res.json())
       .then((data) => setToys(data));
+      
   }, []);
 
   const handleMath = (value) => {
-    fetch(`http://localhost:5000/toyQuery?subCategory=${value}`)
+    fetch(`https://funedutoys.vercel.app/toyQuery?subCategory=${value}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
+
   };
 
   return (
-    <div className="my-20">
+    <div data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="10000" data-aos-easing="ease-in-out" className="my-20">
       <div className="text-center my-5">
         <h3 className="text-4xl font-bold my-10">Shop by Category</h3>
-        <div className="my-10">
+        <div className="my-10 mx-auto md:inline flex flex-col w-1/2 md:w-auto ">
           <button
-            className="btn bg-orange-600 mr-3"
+            className="btn bg-orange-600 mr-3 "
             onClick={() => handleMath("math")}
           >
             Math Toy
           </button>
           <button
-            className="btn bg-orange-600 mr-3"
+            className="btn bg-orange-600 mr-3 mt-2 md:mt-0"
             onClick={() => handleMath("engineering")}
           >
             engineering Toy
           </button>
           <button
-            className="btn bg-orange-600 mr-3"
+            className="btn bg-orange-600 mr-3 mt-2 md:mt-0"
             onClick={() => handleMath("science")}
           >
             Science Toy
