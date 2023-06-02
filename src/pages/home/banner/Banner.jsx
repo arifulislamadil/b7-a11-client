@@ -68,7 +68,7 @@ const Banner = () => {
       
     </div>
 
-    <div className="fixed mt-[880px] md:mt-[500px] mr-[-10px] md:mr-[-40px] text-4xl text-orange-600 z-50"><ScrollToTopButton></ScrollToTopButton></div>
+    <div className="fixed mt-[850px] md:mt-[500px] mr-[-10px] md:mr-[-40px] text-6xl text-orange-600 z-50"><ScrollToTopButton></ScrollToTopButton></div>
     </div>
   );
 };

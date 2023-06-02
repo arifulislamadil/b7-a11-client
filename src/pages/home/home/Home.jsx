@@ -4,6 +4,8 @@ import GalleryProducts from "../gallery/GalleryProducts";
 import About from "../about/About";
 import Category from "../../category/Category";
 import Counter from "../../counter/Counter";
+import ExploreFun from "../../exploreFun/ExploreFun";
+import Brand from "../../brand/Brand";
 
 
 const Home = ({title}) => {
@@ -14,6 +16,8 @@ const Home = ({title}) => {
       <GalleryProducts />
       <Category />
       <Counter/>
+      <ExploreFun/>
+      <Brand/>
     </div>
   );
 };
