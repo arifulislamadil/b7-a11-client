@@ -1,21 +1,69 @@
 .container {
     position: relative;
     display: inline-block;
+   
+   
+   
   }
   
   .image {
     display: block;
     width: 100%;
-   
   }
   
   .text-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
+  
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .header-text{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .header-overlay {
+    position: absolute;
+    top: 17%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
     padding: 10px;
   }
-  
+
+  .image-div img{
+    width:200px;
+    height: 150px;
+    display: inline;
+  }
+
+
+  /* Mobile Styles */
+@media (max-width: 767px) {
+  .image-div img{
+    width:100px;
+    height: 70px;
+  }
+
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .image-div img{
+    width:200px;
+    height: 150px;
+  }
+
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .image-div img{
+    width:120px;
+    height: 120px;
+  }
+
+}

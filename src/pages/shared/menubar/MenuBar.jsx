@@ -54,7 +54,7 @@ const MenuBar = () => {
         {/* show login and logout buttons */}
         {user?.email ? (
           <>
-            <Link className="mr-3" to="/">
+            <Link className="mr-0 md:mr-3 hidden md:block" to="/">
               <div
                 className="tooltip tooltip-bottom"
                 data-tip={`${user?.displayName                }`}
@@ -66,13 +66,13 @@ const MenuBar = () => {
                 </div>
               </div>
             </Link>
-            <button onClick={handleLogOut} className="btn bg-orange-600 mr-3">
+            <button onClick={handleLogOut} className="btn bg-orange-600 mr-3 hidden md:block">
               Log Out
             </button>
           </>
         ) : (
           <Link to="/login">
-            <button className="btn  bg-orange-600">Login</button>
+            <button className="btn  bg-orange-600 hidden md:block">Login</button>
           </Link>
         )}
       </div>
@@ -96,8 +96,34 @@ const MenuBar = () => {
         </label>
         <ul
           tabIndex={0}
-          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-30  ml-[-50px]"
+          className="menu menu-compact dropdown-content mt-3 px-4 shadow bg-base-100 rounded-box   ml-[-80px]"
         >
+          
+          <li>
+          {user?.email ? (
+          <>
+            <Link className="mr-0 md:mr-3 block md:hidden" to="/">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={`${user?.displayName                }`}
+              >
+                <div className="avatar ">
+                  <div className="w-12 rounded-full">
+                    <img src={user.photoURL? user.photoURL:"no img"} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+            <button onClick={handleLogOut} className="btn bg-orange-600 mr-3 block md:hidden">
+              Log Out
+            </button>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="btn  bg-orange-600 ">Login</button>
+          </Link>
+        )}
+          </li>
           <li>{menuItems}</li>
         </ul>
       </div>
