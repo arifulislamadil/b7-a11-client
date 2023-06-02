@@ -1,8 +1,10 @@
 import React from "react";
-
+import AOS from "aos";
 const ExploreFun = () => {
+
+    AOS.init();
   return (
-    <div className="mb-20 w-full">
+    <div className="mb-20 w-full" data-aos="fade-up" data-aos-delay="500" data-aos-duration="10000" data-aos-easing="ease-in-out" data-aos-mirror="true">
       <div>
         <h3 className="text-4xl font-bold text-center">Explore fun</h3>
       </div>

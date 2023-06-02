@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import ScrollToTopButton from "../../shared/ScrollToTopButton/ScrollToTopButton";
-
+import AOS from "aos";
 
 const Banner = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+
+  AOS.init();
   const slides = [
     {
       title: "Unlock your child's potential with our educational toy selection",
@@ -36,7 +39,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="flex justify-end items-center">
+    <div className="flex justify-end items-center" data-aos="fade-down" data-aos-delay="500" data-aos-duration="10000" data-aos-easing="ease-in-out" data-aos-mirror="true">
       <div className="flex flex-col-reverse md:flex-row justify-center items-center my-10">
       <div className="w-full md:w-1/2 px-10 md:px-20">
         <h2 className="text-xl md:text-4xl font-bold mb-4 mt-4">{slides[activeSlide].title}</h2>
