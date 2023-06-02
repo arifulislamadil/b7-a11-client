@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 
 const Register = () => {
@@ -46,6 +47,7 @@ const Register = () => {
 
   return (
     <div>
+      <DynamicHeader title="Registration"></DynamicHeader>
       <div className="hero min-h-screen">
         <div className="hero-content flex flex-col md:flex-row">
           <div className="text-center lg:text-left w-3/5 md:w-1/2">

@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/Firebase.config";
+import DynamicHeader from "../../routes/DynamicHeader";
 
 const auth = getAuth(app);
 const  provider = new GoogleAuthProvider();
@@ -62,6 +63,7 @@ const Login = () => {
   };
   return (
     <div>
+      <DynamicHeader title="Login"></DynamicHeader>
       <div className="hero min-h-screen">
         <div className="hero-content flex flex-col md:flex-row">
           <div className="text-center lg:text-left w-3/5 md:w-1/2">
